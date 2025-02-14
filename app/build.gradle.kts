@@ -33,9 +33,17 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
+    //Navigation
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+    implementation (libs.lottie.v640)
+    implementation (libs.dotsindicator)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
