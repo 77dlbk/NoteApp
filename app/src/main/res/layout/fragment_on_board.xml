@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#252525"
+    tools:context=".UI.Fragments.onBoard.OnBoardFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager"
+        />
+    <TextView
+        android:id="@+id/txt_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#D88B02"
+        android:text="Пропустить"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        />
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dotsIndicator"
+        app:dotsColor="#c4c4c4"
+        app:dotsClickable="true"
+        app:selectedDotColor="#D88B02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:layout_gravity="center"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="290dp"
+        app:cornerRadius="16dp"
+        android:text="Начать"
+        android:textSize="22sp"
+        android:id="@+id/btn_start"
+        android:paddingVertical="18dp"
+        android:paddingHorizontal="78dp"
+        android:backgroundTint="#D88B02"
+
+
+        />
+
+</FrameLayout>
