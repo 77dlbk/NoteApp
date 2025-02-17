@@ -9,10 +9,23 @@
         android:id="@+id/onBoardFragment"
         android:name="com.example.noteapp.UI.Fragments.onBoard.OnBoardFragment"
         android:label="fragment_on_board"
-        tools:layout="@layout/fragment_on_board" />
+        tools:layout="@layout/fragment_on_board" >
+        <action
+            android:id="@+id/action_onBoardFragment_to_noteFragment"
+            app:destination="@id/noteFragment"
+            app:enterAnim="@anim/slade_in_right"
+            app:exitAnim="@anim/slade_out_left"
+            app:popEnterAnim="@anim/slade_in_right"
+            app:popExitAnim="@anim/slade_out_left"/>
+    </fragment>
     <fragment
         android:id="@+id/onBoardPagerFragment"
         android:name="com.example.noteapp.UI.Fragments.onBoard.OnBoardPagerFragment"
         android:label="fragment_on_board_pager"
         tools:layout="@layout/fragment_on_board_pager" />
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.noteapp.UI.Fragments.Note.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" />
 </navigation>
