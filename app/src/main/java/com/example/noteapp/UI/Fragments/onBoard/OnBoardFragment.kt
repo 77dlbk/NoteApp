@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.noteapp.R
 import com.example.noteapp.UI.Adapters.OnBoardAdapter
 import com.example.noteapp.databinding.FragmentOnBoardBinding
+import com.example.noteapp.utils.PreferenceHelper
 
 
 class OnBoardFragment : Fragment() {
@@ -34,7 +36,8 @@ class OnBoardFragment : Fragment() {
         binding.dotsIndicator.attachTo(binding.viewPager)
 
     }
-    private fun setupListener()  = with(binding.viewPager){
+    private fun setupListener()  = with(binding.viewPager)
+    {
        registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
            override fun onPageSelected(position: Int) = with(binding) {
                super.onPageSelected(position)
@@ -52,6 +55,10 @@ class OnBoardFragment : Fragment() {
                }
                else {
                    btnStart.visibility = View.GONE
+               }
+               btnStart.setOnClickListener {
+                   PreferenceHelper.onBoardShown = true // Устанавливаем флаг
+                   findNavController().navigate(R.id.noteFragment) // Переход в NoteFragment
                }
 
            }
