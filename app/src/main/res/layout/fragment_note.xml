@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.Fragments.Note.NoteFragment"
+    android:background="#252525">
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="18dp"
+        android:layout_height="12.45dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Все заметки"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/menu_icon"
+        app:layout_constraintEnd_toStartOf="@id/grid_icon"
+        android:layout_marginTop="13dp"
+        />
+
+    <ImageView
+        android:id="@+id/grid_icon"
+        android:layout_width="18dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_grid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="18dp"/>
+
+    <ImageButton
+        android:id="@+id/btn_add"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/bg_circle"
+        android:src="@drawable/ic_add"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="35dp"/>
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
