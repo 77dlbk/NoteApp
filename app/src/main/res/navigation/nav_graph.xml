@@ -27,5 +27,18 @@
         android:id="@+id/noteFragment"
         android:name="com.example.noteapp.UI.Fragments.Note.NoteFragment"
         android:label="fragment_note"
-        tools:layout="@layout/fragment_note" />
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment"
+            app:enterAnim="@anim/slade_in_right"
+            app:exitAnim="@anim/slade_out_left"
+            app:popEnterAnim="@anim/slade_in_right"
+            app:popExitAnim="@anim/slade_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.noteapp.UI.Fragments.Note.NoteDetailFragment"
+        android:label="fragment_note_detail"
+        tools:layout="@layout/fragment_note_detail" />
 </navigation>

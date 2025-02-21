@@ -41,6 +41,18 @@
         android:layout_marginEnd="15dp"
         android:layout_marginTop="18dp"/>
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/item_note"
+        android:id="@+id/rv_note"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="142dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp"
+        />
     <ImageButton
         android:id="@+id/btn_add"
         android:layout_width="45dp"
@@ -52,6 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="23dp"
         android:layout_marginBottom="35dp"/>
+
 
 
 
