@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
+<<<<<<< HEAD
+=======
+        // Если OnBoard уже просмотрен, сразу переходим в NoteFragment
+>>>>>>> origin/RoomHw5
         if (PreferenceHelper.onBoardShown) {
             navController.navigate(R.id.noteFragment)
         }

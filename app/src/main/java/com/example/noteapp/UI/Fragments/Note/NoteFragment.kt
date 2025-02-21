@@ -5,17 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< HEAD
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.noteapp.App
 import com.example.noteapp.R
 import com.example.noteapp.UI.Adapters.NoteAdapter
+=======
+import com.example.noteapp.R
+>>>>>>> origin/RoomHw5
 import com.example.noteapp.databinding.FragmentNoteBinding
 
 class NoteFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteBinding
+<<<<<<< HEAD
     private val noteAdapter = NoteAdapter()
+=======
+>>>>>>> origin/RoomHw5
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +34,7 @@ class NoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+<<<<<<< HEAD
         initialize()
         setupListener()
         getData()
@@ -52,4 +60,8 @@ class NoteFragment : Fragment() {
         }
     }
 
+=======
+
+    }
+>>>>>>> origin/RoomHw5
 }

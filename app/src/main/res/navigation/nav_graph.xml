@@ -27,6 +27,7 @@
         android:id="@+id/noteFragment"
         android:name="com.example.noteapp.UI.Fragments.Note.NoteFragment"
         android:label="fragment_note"
+<<<<<<< HEAD
         tools:layout="@layout/fragment_note" >
         <action
             android:id="@+id/action_noteFragment_to_noteDetailFragment"
@@ -41,4 +42,7 @@
         android:name="com.example.noteapp.UI.Fragments.Note.NoteDetailFragment"
         android:label="fragment_note_detail"
         tools:layout="@layout/fragment_note_detail" />
+=======
+        tools:layout="@layout/fragment_note" />
+>>>>>>> origin/RoomHw5
 </navigation>
