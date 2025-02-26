@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/custom_border"
+
+    android:paddingStart="18dp">
+
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Нужно сделать:"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:maxLines="2"
+        android:paddingTop="24dp"
+        />
+
+
+    <TextView
+        android:id="@+id/txt_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Работы с проектом, сделать домашку браться и перед..."
+        android:textSize="10sp"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+
+            android:id="@+id/txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#434343"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            tools:text="31 Мая"
+
+            />
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#434343"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            tools:text="17:31"
+            android:layout_marginStart="2dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

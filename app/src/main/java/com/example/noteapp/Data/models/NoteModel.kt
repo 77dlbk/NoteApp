@@ -1,5 +1,6 @@
 package com.example.noteapp.Data.models
 
+import android.graphics.Color
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.time.LocalDate
@@ -11,7 +12,8 @@ data class NoteModel(
     val title: String,
     val description: String,
     val date: String,
-    val time: String
+    val time: String,
+    val color: Int = Color.YELLOW
 ){
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0

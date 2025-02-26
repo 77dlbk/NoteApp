@@ -1,7 +1,7 @@
 package com.example.noteapp
 
 import android.app.Application
-<<<<<<< HEAD
+
 import android.content.Context
 import androidx.room.Room
 import com.example.noteapp.Data.db.AppDatabase
@@ -29,14 +29,7 @@ class App: Application() {
                 ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
             }
         }
-        return appDatabase
-=======
-import com.example.noteapp.utils.PreferenceHelper
-
-class App: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        PreferenceHelper.init(this)
->>>>>>> origin/RoomHw5
-    }
+        return appDatabase}
 }
+
+

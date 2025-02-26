@@ -22,6 +22,8 @@ import java.util.Calendar
 class NoteDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteDetailBinding
+    private var noteId:Int = -1
+    private var selectedNoteColor: Int = Color.YELLOW
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +37,24 @@ class NoteDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setCurrentDateTime()
         setupListener()
+        updateNote()
+    }
+
+    private fun updateNote() {
+        arguments?.let {args ->
+            noteId = args.getInt("noteId", -1)
+        }
+        if (noteId != -1){
+            val id =App.appDatabase?.noteDao()?.getById(noteId)
+            id?.let {model->
+                binding.txtTitle.setText(model.title)
+                binding.txtDescription.setText(model.description)
+                binding.txtDate.text = model.date
+                binding.txtTime.text = model.time
+                selectedNoteColor = model.color // Загружаем цвет заметки
+                binding.btnColorPicker.setBackgroundColor(selectedNoteColor) // Меняем цвет кнопки
+            }
+        }
     }
 
     private fun setCurrentDateTime()  = with(binding){
@@ -79,11 +99,24 @@ class NoteDetailFragment : Fragment() {
             val etDescription = txtDescription.text.toString()
             val savedDate = txtDate.text.toString()
             val savedTime = txtTime.text.toString()
-            App.appDatabase?.noteDao()?.insert(NoteModel(etTitle,etDescription,savedDate,savedTime))
+            if (noteId !=-1){
+                val updateNote = NoteModel(etTitle,etDescription,savedDate,savedTime,selectedNoteColor)
+                updateNote.id = noteId
+                App.appDatabase?.noteDao()?.updateNote(updateNote)
+            }else{
+                App.appDatabase?.noteDao()?.insert(NoteModel(etTitle,etDescription,savedDate,savedTime,selectedNoteColor))
+            }
             findNavController().navigateUp()
         }
         btnBack.setOnClickListener {
             findNavController().navigateUp()
+        }
+        btnColorPicker.setOnClickListener {
+            val colorPicker = ColorPickerBottomSheet { selectedColor ->
+                selectedNoteColor = selectedColor // Обновляем цвет заметки
+                btnColorPicker.setBackgroundColor(selectedNoteColor) // Только для визуального отображения выбора
+            }
+            colorPicker.show(parentFragmentManager, "ColorPicker")
         }
 
     }
