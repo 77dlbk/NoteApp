@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="190dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_bg"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Поменять цвет"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="2"
+       >
+
+        <View android:id="@+id/color1" android:layout_width="50dp" android:layout_height="50dp" android:background="@color/colorYellow"/>
+        <View android:id="@+id/color2" android:layout_width="50dp" android:layout_height="50dp" android:background="@color/colorPurple"/>
+        <View android:id="@+id/color3" android:layout_width="50dp" android:layout_height="50dp" android:background="@color/colorPink"/>
+        <View android:id="@+id/color4" android:layout_width="50dp" android:layout_height="50dp" android:background="@color/colorRed"/>
+        <View android:id="@+id/color5" android:layout_width="50dp" android:layout_height="50dp" android:background="@color/colorGreen"/>
+        <View android:id="@+id/color6" android:layout_width="50dp" android:layout_height="50dp" android:background="@color/colorBlue"/>
+    </GridLayout>
+</LinearLayout>
