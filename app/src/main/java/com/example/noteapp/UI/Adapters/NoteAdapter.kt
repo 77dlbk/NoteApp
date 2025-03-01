@@ -97,6 +97,6 @@ class NoteAdapter(
             return oldItem == newItem
         }
     }
-
+//ojeqbnfgijwebf
 
 }
