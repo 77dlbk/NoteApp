@@ -64,15 +64,21 @@ class NoteFragment : Fragment(), OnClickItem {
     }
 
     private fun toggleLayoutManager() {
-        isGrid = !isGrid // Меняем состояние
+        isGrid = !isGrid
+        noteAdapter.isGridMode = isGrid // Обновляем состояние адаптера
 
-        if (isGrid) {
-            binding.rvNote.layoutManager = GridLayoutManager(requireContext(), 2)
-            binding.gridIcon.setImageResource(R.drawable.ic_list) // Меняем иконку на список
+        binding.rvNote.layoutManager = if (isGrid) {
+            GridLayoutManager(requireContext(), 2)
         } else {
-            binding.rvNote.layoutManager = LinearLayoutManager(requireContext())
-            binding.gridIcon.setImageResource(R.drawable.ic_grid) // Меняем иконку на сетку
+            LinearLayoutManager(requireContext())
         }
+
+        binding.gridIcon.setImageResource(
+            if (isGrid) R.drawable.ic_list else R.drawable.ic_grid
+        )
+
+
+        noteAdapter.notifyDataSetChanged()
     }
 
     private fun getData() {
