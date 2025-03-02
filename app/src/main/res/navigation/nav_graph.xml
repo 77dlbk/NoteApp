@@ -46,5 +46,10 @@
             android:name="noteId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.noteapp.UI.Fragments.signin.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
 
 </navigation>

@@ -58,7 +58,7 @@ class OnBoardFragment : Fragment() {
                }
                btnStart.setOnClickListener {
                    PreferenceHelper.onBoardShown = true // Устанавливаем флаг
-                   findNavController().navigate(R.id.noteFragment) // Переход в NoteFragment
+                   findNavController().navigate(R.id.authFragment) // Переход в NoteFragment
                }
 
            }

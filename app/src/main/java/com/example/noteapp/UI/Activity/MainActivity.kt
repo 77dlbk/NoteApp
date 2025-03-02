@@ -31,7 +31,10 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        if (PreferenceHelper.onBoardShown) {
+        if (PreferenceHelper.onBoardShown && PreferenceHelper.authShown) {
             navController.navigate(R.id.noteFragment)
+        }
+        else{
+            navController.navigate(R.id.onBoardFragment)
         }
     }}

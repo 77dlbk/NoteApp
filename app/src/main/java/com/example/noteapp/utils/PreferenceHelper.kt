@@ -13,4 +13,8 @@ object PreferenceHelper {
     var onBoardShown: Boolean
         get() = sharedPreferences.getBoolean("onboard", false)
         set(value) = sharedPreferences.edit().putBoolean("onboard", value).apply()
+
+    var authShown: Boolean
+        get() = sharedPreferences.getBoolean("onAuth",false)
+        set(value) = sharedPreferences.edit().putBoolean("onboard",value).apply()
 }
