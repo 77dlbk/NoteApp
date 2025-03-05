@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.Fragments.Note.NoteDetailFragment"
+    android:background="#252525">
+    
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_btnback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="44dp"
+        android:layout_marginStart="20dp"/>
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginStart="28dp"
+        tools:text="30 Мая"
+        android:textSize="14sp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/btn_colorPicker"
+        android:src="@drawable/ic_colorpicker"
+        app:layout_constraintEnd_toStartOf="@id/btn_ready"
+        app:layout_constraintTop_toTopOf="@id/btn_ready"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_ready"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/btn_ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        android:textColor="#D88b02"
+        android:textStyle="bold"
+        android:layout_marginStart="28dp"
+        android:text="Готово"
+        android:layout_marginEnd="20dp"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/txt_date"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        android:textColor="#B3FFFFFF"
+        android:layout_marginStart="4dp"
+        tools:text="17:21"
+        android:textSize="14sp"/>
+    
+    <EditText
+        android:background="@android:color/transparent"
+        android:textCursorDrawable="@drawable/custom_cursor"
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="82dp"
+        android:hint="Title"
+        android:textColor="#B3FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_marginStart="20dp"
+        android:textColorHint="#B3FFFFFF"
+        />
+    <EditText
+        android:background="@android:color/transparent"
+        android:textColor="#B3FFFFFF"
+        android:textCursorDrawable="@drawable/custom_cursor"
+        android:id="@+id/txt_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Text"
+        android:layout_marginTop="12dp"
+        android:textSize="12sp"
+        android:layout_marginStart="20dp"
+        android:textColorHint="#B3FFFFFF"
+        />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
