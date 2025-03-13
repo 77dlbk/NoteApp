@@ -4,13 +4,13 @@ import android.app.Application
 
 import android.content.Context
 import androidx.room.Room
-import com.example.noteapp.Data.db.AppDatabase
-import com.example.noteapp.utils.PreferenceHelper
+import com.example.noteapp.Model.Data.db.AppDatabase
+import com.example.noteapp.Model.utils.PreferenceHelper
 
 class App: Application() {
 
     companion object{
-        var appDatabase:AppDatabase? = null
+        var appDatabase: AppDatabase? = null
     }
 
     override fun onCreate() {
@@ -19,7 +19,7 @@ class App: Application() {
         getInstance()
     }
 
-    private fun getInstance():AppDatabase? {
+    private fun getInstance(): AppDatabase? {
         if (appDatabase == null){
             appDatabase = applicationContext?.let {context: Context ->
                 Room.databaseBuilder(

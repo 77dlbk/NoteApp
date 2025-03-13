@@ -1,4 +1,4 @@
-package com.example.noteapp.UI.Activity
+package com.example.noteapp.View.UI.Activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -10,7 +10,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.noteapp.R
 import com.example.noteapp.databinding.ActivityMainBinding
-import com.example.noteapp.utils.PreferenceHelper
+import com.example.noteapp.Model.utils.PreferenceHelper
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

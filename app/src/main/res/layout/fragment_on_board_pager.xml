@@ -7,7 +7,7 @@
 
     android:paddingHorizontal="16dp"
     android:orientation="vertical"
-    tools:context=".UI.Fragments.onBoard.OnBoardPagerFragment">
+    tools:context=".View.UI.Fragments.onBoard.OnBoardPagerFragment">
 
 
     <TextView

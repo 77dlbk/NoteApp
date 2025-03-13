@@ -1,7 +1,8 @@
-package com.example.noteapp.UI.Fragments.Note
+package com.example.noteapp.View.UI.Fragments.Note
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,20 +13,23 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.noteapp.App
-import com.example.noteapp.Data.models.NoteModel
+import com.example.noteapp.Model.Data.models.NoteModel
+import com.example.noteapp.Presenter.note.NoteContract
+import com.example.noteapp.Presenter.note.NotePresenter
 import com.example.noteapp.R
-import com.example.noteapp.UI.Adapters.NoteAdapter
-import com.example.noteapp.UI.interfaces.OnClickItem
+import com.example.noteapp.View.UI.Adapters.NoteAdapter
+import com.example.noteapp.View.UI.interfaces.OnClickItem
 
 
 import com.example.noteapp.databinding.FragmentNoteBinding
 
-class NoteFragment : Fragment(), OnClickItem {
+class NoteFragment : Fragment(), OnClickItem, NoteContract.View {
 
     private lateinit var binding: FragmentNoteBinding
     private var isGrid = false
 
     private val noteAdapter = NoteAdapter(onLongClick = this, onClick = this)
+    private val presenter by lazy { NotePresenter(this ) }
 
 
     override fun onCreateView(
@@ -108,5 +112,15 @@ class NoteFragment : Fragment(), OnClickItem {
         findNavController().navigate(action)
     }
 
+    override fun showNotes(note: List<NoteModel>) {
+        App.appDatabase?.noteDao()?.getAll()?.observe(viewLifecycleOwner) { listModel ->
+            noteAdapter.submitList(listModel)
 
+        }
+
+    }
+
+    override fun showError(message: String) {
+        Log.e("NotesFragment", message)
+    }
 }

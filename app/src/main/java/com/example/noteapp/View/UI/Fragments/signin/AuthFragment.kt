@@ -1,4 +1,4 @@
-package com.example.noteapp.UI.Fragments.signin
+package com.example.noteapp.View.UI.Fragments.signin
 
 import android.app.Activity
 import android.content.Intent
@@ -12,7 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.fragment.findNavController
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentAuthBinding
-import com.example.noteapp.utils.PreferenceHelper
+import com.example.noteapp.Model.utils.PreferenceHelper
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

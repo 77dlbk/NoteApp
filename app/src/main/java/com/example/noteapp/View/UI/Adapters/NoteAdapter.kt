@@ -1,4 +1,4 @@
-package com.example.noteapp.UI.Adapters
+package com.example.noteapp.View.UI.Adapters
 
 import android.graphics.Color
 import android.provider.ContactsContract.CommonDataKinds.Note
@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.noteapp.Data.models.NoteModel
+import com.example.noteapp.Model.Data.models.NoteModel
 import com.example.noteapp.R
-import com.example.noteapp.UI.interfaces.OnClickItem
+import com.example.noteapp.View.UI.interfaces.OnClickItem
 import com.example.noteapp.databinding.ItemNoteBinding
 import com.example.noteapp.databinding.ItemNoteGridBinding
 

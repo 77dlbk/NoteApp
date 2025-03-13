@@ -1,4 +1,4 @@
-package com.example.noteapp.UI.Fragments.onBoard
+package com.example.noteapp.View.UI.Fragments.onBoard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.noteapp.R
-import com.example.noteapp.UI.Adapters.OnBoardAdapter
+import com.example.noteapp.View.UI.Adapters.OnBoardAdapter
 import com.example.noteapp.databinding.FragmentOnBoardBinding
-import com.example.noteapp.utils.PreferenceHelper
+import com.example.noteapp.Model.utils.PreferenceHelper
 
 
 class OnBoardFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.example.noteapp.UI.Fragments.onBoard
+package com.example.noteapp.View.UI.Fragments.onBoard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.example.noteapp.UI.Fragments.Note
+package com.example.noteapp.View.UI.Fragments.Note
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -6,24 +6,29 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.format.DateFormat
-import android.text.format.DateUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.noteapp.App
-import com.example.noteapp.Data.models.NoteModel
+import com.example.noteapp.Model.Data.models.NoteModel
+import com.example.noteapp.Presenter.write.WriteNoteContract
+import com.example.noteapp.Presenter.write.WriteNotePresenter
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentNoteDetailBinding
 import java.util.Calendar
 
 
-class NoteDetailFragment : Fragment() {
+class NoteDetailFragment : Fragment(), WriteNoteContract.View {
 
     private lateinit var binding: FragmentNoteDetailBinding
     private var noteId:Int = -1
     private var selectedNoteColor: Int = Color.YELLOW
+
+    private val presenter by lazy { WriteNotePresenter(this ) }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -102,7 +107,8 @@ class NoteDetailFragment : Fragment() {
             if (noteId !=-1){
                 val updateNote = NoteModel(etTitle,etDescription,savedDate,savedTime,selectedNoteColor)
                 updateNote.id = noteId
-                App.appDatabase?.noteDao()?.updateNote(updateNote)
+//                App.appDatabase?.noteDao()?.updateNote(updateNote)
+                
             }else{
                 App.appDatabase?.noteDao()?.insert(NoteModel(etTitle,etDescription,savedDate,savedTime,selectedNoteColor))
             }
@@ -119,6 +125,19 @@ class NoteDetailFragment : Fragment() {
             colorPicker.show(parentFragmentManager, "ColorPicker")
         }
 
+    }
+
+    override fun showError(message: String) {
+
+    }
+
+    override fun noteSaved() {
+        Toast.makeText(requireContext(),"Note Saved", Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun noteUpdated() {
+        Toast.makeText(requireContext(),"Note Updated", Toast.LENGTH_SHORT).show()
     }
 
 }
