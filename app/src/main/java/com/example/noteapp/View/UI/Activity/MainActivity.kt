@@ -1,4 +1,4 @@
-package com.example.noteapp.UI.Activity
+package com.example.noteapp.View.UI.Activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -10,7 +10,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.noteapp.R
 import com.example.noteapp.databinding.ActivityMainBinding
-import com.example.noteapp.utils.PreferenceHelper
+import com.example.noteapp.Model.utils.PreferenceHelper
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -30,8 +30,11 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        // Если OnBoard уже просмотрен, сразу переходим в NoteFragment
-        if (PreferenceHelper.onBoardShown) {
+
+        if (PreferenceHelper.onBoardShown && PreferenceHelper.authShown) {
             navController.navigate(R.id.noteFragment)
+        }
+        else{
+            navController.navigate(R.id.onBoardFragment)
         }
     }}

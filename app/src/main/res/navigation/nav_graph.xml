@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/onBoardFragment"
-        android:name="com.example.noteapp.UI.Fragments.onBoard.OnBoardFragment"
+        android:name="com.example.noteapp.View.UI.Fragments.onBoard.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board" >
         <action
@@ -20,12 +20,36 @@
     </fragment>
     <fragment
         android:id="@+id/onBoardPagerFragment"
-        android:name="com.example.noteapp.UI.Fragments.onBoard.OnBoardPagerFragment"
+        android:name="com.example.noteapp.View.UI.Fragments.onBoard.OnBoardPagerFragment"
         android:label="fragment_on_board_pager"
         tools:layout="@layout/fragment_on_board_pager" />
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.noteapp.UI.Fragments.Note.NoteFragment"
+        android:name="com.example.noteapp.View.UI.Fragments.Note.NoteFragment"
         android:label="fragment_note"
-        tools:layout="@layout/fragment_note" />
+
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment"
+            app:enterAnim="@anim/slade_in_right"
+            app:exitAnim="@anim/slade_out_left"
+            app:popEnterAnim="@anim/slade_in_right"
+            app:popExitAnim="@anim/slade_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.noteapp.View.UI.Fragments.Note.NoteDetailFragment"
+        android:label="fragment_note_detail"
+        tools:layout="@layout/fragment_note_detail" >
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.noteapp.View.UI.Fragments.signin.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
+
 </navigation>
